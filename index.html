@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<head>
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!--site title-->
+    <title>TweetCheckr</title>
+
+    <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>  
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=[YOUR-GOOGLE-CLOUD-KEY]&callback=initMap"></script>
+    <script src="scripts.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Nunito+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<html>
+    <body>
+        <div class="topnav">
+            <div class="topnav left">
+                <h3><a href="/">TweetCheckr</a></h3>
+            </div>
+            <div class="topnav right">
+                <h3><a href="/">Check Another Tweet</a></h3>
+                <h3><a href="https://emilyrmerritt.net/works/project.html?index=5">About</a></h3>
+            </div>
+        </div>
+
+        <div class="grid-layout">
+            <div class="tweet-search" name="search-bar">
+                <h3>Every day, breaking news is shared on Twitter.<br>So is misinformation.<br><span style="color:#1abb9c;">It's not easy to sort out the news from the noise.</span><br><br><br>TweetCheckr is here to help you verify the information you find on Twitter by investigating its source.</h3>
+                <br>
+                <form name="search-tweet" class="tweetcheckr-form" style="text-align:center;"><input type="text" name="tweet-url" placeholder="Paste Tweet URL here">  <input type="submit" value="Go">
+                </form>
+            </div>
+            <div class="onboarding" name="how-to">
+                <h2>How to Use TweetCheckr</h2>
+                <div class="process">
+                    <div class="step" name="step1">
+                        <h3>Copy Tweet URL</h3>
+                        <img src="https://tweetcheckr.com/assets/images/CopyLinkToTweet.png">
+                        <p>Click the &#8897; symbol in the top right corner of a tweet you want to learn about. Select "Copy Link to Tweet" from the drop-down menu.</p>
+                    </div>
+                    <div class="step" name="step1">
+                        <h3>Paste into TweetCheckr</h3>
+                        <img src="https://tweetcheckr.com/assets/images/PasteLink.png">
+                        <p>Paste the tweet's unique URL that you just copied into TweetCheckr. Make sure it includes "https://twitter.com" when you paste in the link. </p>
+                    </div>
+                    <div class="step" name="step1">
+                        <h3>Reveal Information</h3>
+                        <img src="https://tweetcheckr.com/assets/images/RevealInfo.png">
+                        <p>TweetCheckr will provide you with important information to help you deduce the validity of the tweet's content. Read the instructions about what to look for in each panel, then click the button to reveal the information below.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="embed-tweet" name="embed-tweet">
+            </div>
+            <div class="widgets-left-cl">
+                <div class="widget">
+                    <div class="widget-primer" name="author-info-primer">
+                        <h3>Author Information</h3>
+                        <p>Here you'll find key information about the Twitter user who created the post.</p>
+                        <p>You'll want to look for inconsistencies between the content of the post and the user's bio. You should also take note if the user's account was created very recently, which could be a sign that was created for the purpose of posting this specific tweet.</p> 
+                        <p>Also check to see if they follow very few accounts, or if they have very few followers, which may also be an indication that this twitter account does not belong to a typical Twitter user.</p>
+                        <button class="display-content">See Author's Information</button>
+                    </div>
+                    <div class="widget-content" name="author-info">
+                    </div>
+                </div>
+                <div class="widget">
+                    <div class="widget-primer" name="location-info-primer">
+                        <h3>Location Information</h3>
+                        <p>
+                            There are two key locations related to any tweet: the tweet's "Place" and the author's self-stated location.
+                        </p>
+                        <p>
+                            <span style="color:#1abb9c;">Place:</span> The author of a tweet can choose to add a "Place" to the post. It's important to remember that this can be falsified. <br>
+                            <span style="color:#1abb9c;">Author's Location:</span> This is the location the user has chosen to add to their Twitter bio. Users can choose any text to add to this field, and many users specify a very broad region, like "California" or "United States".
+                        </p>
+                        <p>
+                            Compare both locations to each other, and use the author's bio and recent tweets as reference: if the locations don't match, does it make sense that this person traveled to the place they say they are in the tweet?
+                        </p>
+                        <button class="display-content">See Location Information</button>
+                    </div>
+                    <div class="widget-content" name="location-info">
+                    </div>
+                </div>
+                <div class="widget">
+                    <div id="map" class="widget-content"></div>
+                    </div>
+            </div>
+            <div class="widgets-right-cl">
+                <div class="widget">
+                    <div class="widget-primer" name="timeline-info-primer">
+                        <h3>Author's Recent Tweets</h3>
+                        <p>This panel shows the author's 10 most recently posted tweets.</p>
+                        <p>
+                            You'll want to compare these tweets to the orignal, and you'll want to cross-reference with the author's bio and location. 
+                        </p>
+                        <p>
+                            Ask yourself: do these tweets or retweets (RT) align with everything else the author claims about themselves? Does this user post any original content, or do they seem to exclusively retweet other users' content?
+                        </p>
+                        <button class="display-content">See Author's Recent Tweets</button>
+                    </div>
+                    <div class="widget-content" name="author-timeline"></div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-l">
+                    <h5>Created by <a href="https://emilyrmerritt.net/">Emily Merritt</a>, a student of <a href="http://journalism.stanford.edu/">Stanford_Journalism.</a></h5>
+                </div>
+                <div class="footer-r">
+                    <h5>TweetCheckr is an entirely open source project. <a href="https://github.com/emmerritt/TweetCheckr">Get the code.</a></h5>
+                </div>
+            </div>
+        </div>
+        
+
+    </body>
+</html>
